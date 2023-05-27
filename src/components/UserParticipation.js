@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import ThankyouMessage from "./ThankyouMessage";
 
 export default function UserParticipation(props) {
   const [value, setValue] = useState();
+  const [flag, setflag] = useState(false);
   const [optionItem, setOptionItem] = useState();
   let question = props.questionArray[0];
 
@@ -60,13 +62,15 @@ export default function UserParticipation(props) {
               element.checked = false;
             }
           });
-
-          props.flag(false);
-          
+          setflag(true);
+          setTimeout(() => {
+            props.flag(false);
+          }, 1000);
         }}
       >
         Submit Vote
       </button>
+      {flag ? <ThankyouMessage /> : ""}
     </div>
   );
 }
