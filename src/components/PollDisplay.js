@@ -8,16 +8,16 @@ export default function PollDisplay(props) {
       <p>Select the choices:</p>
       <div>
         <p>
-          {question["choices"][0].label}: {question["choices"][0].votes}
+          {question["choices"][0].label}: {question["choices"][0].votes[0]}
         </p>
         <p>
-          {question["choices"][1].label}: {question["choices"][1].votes}
+          {question["choices"][1].label}: {question["choices"][1].votes[0]}
         </p>
         <p>
-          {question["choices"][2].label}: {question["choices"][2].votes}
+          {question["choices"][2].label}: {question["choices"][2].votes[0]}
         </p>
         <p>
-          {question["choices"][3].label}: {question["choices"][3].votes}
+          {question["choices"][3].label}: {question["choices"][3].votes[0]}
         </p>
       </div>
     </>
