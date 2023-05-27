@@ -4,7 +4,6 @@ import ThankyouMessage from "./ThankyouMessage";
 export default function UserParticipation(props) {
   const [value, setValue] = useState();
   const [flag, setflag] = useState(false);
-  const [optionItem, setOptionItem] = useState();
   let question = props.questionArray[0];
 
   let handleInput = (e) => {
@@ -55,7 +54,6 @@ export default function UserParticipation(props) {
       </div>
       <button
         onClick={(e) => {
-          value.votes[1](value.votes[0] + 1);
           let div = document.getElementById("group");
           div.childNodes.forEach((element) => {
             if (element.checked) {
@@ -65,6 +63,7 @@ export default function UserParticipation(props) {
           setflag(true);
           setTimeout(() => {
             props.flag(false);
+            value.votes[1](value.votes[0] + 1);
           }, 1000);
         }}
       >
