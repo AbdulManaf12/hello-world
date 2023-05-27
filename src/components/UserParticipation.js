@@ -60,9 +60,12 @@ export default function UserParticipation(props) {
               element.checked = false;
             }
           });
+
+          props.flag(false);
+          
         }}
       >
-        Add Vote
+        Submit Vote
       </button>
     </div>
   );
